@@ -1,3 +1,5 @@
 pyjwt
 langchain
 langchain_community
+uvicorn
+fastapi

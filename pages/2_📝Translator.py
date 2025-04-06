@@ -3,6 +3,19 @@ from langchain_community.chat_models import ChatZhipuAI
 
 
 def initialize_chat():
+
+    # Streamlit file uploader widget
+    uploaded_files = st.file_uploader(
+        "choose .pdf/.txt file",
+        accept_multiple_files=True,
+        type=["pdf", "text", "txt"],
+        key="a",
+    )
+
+    # upload the files to AI21 RAG Engine library
+    for uploaded_file in uploaded_files:
+        client.library.files.create(file_path=uploaded_file, labels=label)
+
     if "messages" not in st.session_state:
         st.session_state["messages"] = [
             {"role": "assistant", "content": "How can I help you?"}
@@ -38,9 +51,9 @@ def handle_user_input(chat_model: ChatZhipuAI):
 
 
 def main():
-    st.set_page_config("Chatbot", page_icon="🚀")
-    st.title("🤖 Chatbot")
-    st.caption("🚀 A Streamlit chatbot powered by AIGC")
+    st.set_page_config("Translator", page_icon="🚀")
+    st.title("📝 Translator")
+    st.caption("🚀 A Streamlit Translator powered by AIGC")
 
     initialize_chat()
     chat_model = setup_chat_model()

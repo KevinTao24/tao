@@ -12,6 +12,15 @@
       "args": ["run", "${file}"],
       "console": "integratedTerminal",
       "justMyCode": false
+    },
+    {
+      "name": "PythonRun",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal",
+      "env": { "PYTHONPATH": "${workspaceRoot}" },
+      "justMyCode": false
     }
   ]
 }

@@ -1,5 +1,8 @@
 import streamlit as st
 
+st.set_page_config(page_title="ShareX", page_icon="🚀")
+
+
 def intro():
     st.write("# Welcome to Streamlit! 👋")
     st.sidebar.success("Select a demo above.")
@@ -27,12 +30,13 @@ def intro():
     """
     )
 
+
 def mapping_demo():
-    import streamlit as st
+    from urllib.error import URLError
+
     import pandas as pd
     import pydeck as pdk
-
-    from urllib.error import URLError
+    import streamlit as st
 
     st.markdown(f"# {list(page_names_to_funcs.keys())[2]}")
     st.write(
@@ -124,12 +128,14 @@ to display geospatial data.
             % e.reason
         )
 
-def plotting_demo():
-    import streamlit as st
-    import time
-    import numpy as np
 
-    st.markdown(f'# {list(page_names_to_funcs.keys())[1]}')
+def plotting_demo():
+    import time
+
+    import numpy as np
+    import streamlit as st
+
+    st.markdown(f"# {list(page_names_to_funcs.keys())[1]}")
     st.write(
         """
         This demo illustrates a combination of plotting and animation with
@@ -160,11 +166,11 @@ Streamlit. We're generating a bunch of random numbers in a loop for around
 
 
 def data_frame_demo():
-    import streamlit as st
-    import pandas as pd
-    import altair as alt
-
     from urllib.error import URLError
+
+    import altair as alt
+    import pandas as pd
+    import streamlit as st
 
     st.markdown(f"# {list(page_names_to_funcs.keys())[3]}")
     st.write(
@@ -217,11 +223,12 @@ def data_frame_demo():
             % e.reason
         )
 
+
 page_names_to_funcs = {
     "—": intro,
     "Plotting Demo": plotting_demo,
     "Mapping Demo": mapping_demo,
-    "DataFrame Demo": data_frame_demo
+    "DataFrame Demo": data_frame_demo,
 }
 
 demo_name = st.sidebar.selectbox("Choose a demo", page_names_to_funcs.keys())

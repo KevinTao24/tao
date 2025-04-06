@@ -1,5 +1,37 @@
 {
-    "cSpell.words": [
-        "zhipu"
-    ]
+  "cSpell.words": [
+    "adddata",
+    "addstrategy",
+    "akshare",
+    "applymap",
+    "BAAI",
+    "backtest",
+    "backtrader",
+    "Cerebro",
+    "conti",
+    "dataframe",
+    "datas",
+    "dtypes",
+    "esti",
+    "etfs",
+    "fastapi",
+    "iloc",
+    "isin",
+    "isna",
+    "iterrows",
+    "jieba",
+    "jiebadict",
+    "kevintao",
+    "lcut",
+    "metadatas",
+    "openinterest",
+    "PABM",
+    "pyjwt",
+    "rzzl",
+    "setcommission",
+    "topn",
+    "uvicorn",
+    "vectorizer",
+    "zhipu"
+  ]
 }
